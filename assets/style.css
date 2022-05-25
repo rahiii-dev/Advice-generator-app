@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary_cyan: hsl(193, 38%, 86%);
+    --neon_green: hsl(150, 100%, 66%);
+
+    --grayish_blue_50: hsl(217, 19%, 38%);
+    --grayis_blue_100: hsl(217, 19%, 24%);
+
+    --dark_blue: hsl(218, 23%, 16%);
+}
+body {
+    min-height: 100vh;
+    font-family: 'Manrope', sans-serif;
+}
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark_blue);
+}
+.container {
+    width: 90%;
+    max-width: 540px;
+    position: relative;
+    padding: 50px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: var(--grayis_blue_100);
+    border-radius: 8px;
+}
+.advice_container h3 {
+    font-size: 0.875rem;
+    color: var(--neon_green);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.advice_container p {   
+    color:var(--primary_cyan) ;
+    font-size: 1.75rem;
+    text-align: center;
+    margin-block: 32px;
+}
+.container .divider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+}
+.container .divider img {
+    display: inline-block;
+}
+
+.container .dice {
+    --size : 65px;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--neon_green);
+    border-radius: 50%;
+    position: absolute;
+    bottom: calc( (var(--size) / 2) * -1);
+    cursor: pointer;
+    transition: 350ms;
+}
+.container .dice img {
+    display: inline-block;
+    transition: transform 600ms;
+}
+
+.container .dice:hover {
+    box-shadow: 0px 0px 25px var(--neon_green);
+}
+
+.container .dice:hover img {
+    transform: rotate(180deg);
+}
+
+@media screen and (max-width: 500px){
+    .container {
+        padding-inline: 25px;
+    }
+    .advice_container p {
+        margin-bottom: 20px;
+    }
+}
